@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/styles.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tell sauer</h1>
+
+      <div class="buttoncontainer">
+        <input
+          type="button"
+          value="Klikk her for å spille"
+          id="btn"
+          onclick="startCounting()"
+        />
+      </div>
+
+      <p id="text"></p>
+      <p id="image"></p>
+    </div>
+
+    <script>
+      var counter = 0;
+      var y = "Ja";
+      var n = "Nei";
+
+      function startCounting() {
+        var question = prompt("Vil du telle sauer? (Ja/Nei)");
+        while (question != n) {
+          if (question === y) {
+            counter++;
+            question = prompt(
+              `Vil du fortsette å telle sauer? Ja/Nei? Antall sauer: ${counter}`
+            );
+          } else {
+            question = "Vil du fortsette å telle sauer? Ja/Nei?";
+          }
+        }
+        let sheepText = document.getElementById("text");
+        let sheepImage = document.getElementById("image");
+        if (question === n) {
+          for (var i = 0; i < counter; i++) {
+            sheepText.innerHTML = `Totalt sauer du har telt: ${counter}`;
+            sheepImage.innerHTML += `<img src="./Imagees/sheep.png">`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

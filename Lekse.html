@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/lekse.css" rel="stylesheet" />
+    <title>Psychic</title>
+  </head>
+  <body>
+    <h1>Click the fortune ball to predict your future</h1>
+    <img
+      src="./Imagees/fortuneball.png"
+      alt="A fortune ball"
+      id="image"
+      onclick="getDivination()"
+    />
+
+    <div class="card-frame">
+      <h2 id="card-name">Name</h2>
+      <p id="img"></p>
+      <div class="card-info">
+        <h3 id="card-text">Divination</h3>
+      </div>
+    </div>
+
+    <script>
+      let divinations = ["Rich", "Poor", "Big house", "Ten children", "Fat"];
+      let name = document.getElementById("card-name");
+      let divination = document.getElementById("img");
+      let cardText = document.getElementById("card-text");
+
+      // let Rich = (divination.innerHTML = `<img src="./Imagees/money.png">`);
+
+      console.log(Rich);
+
+      function getDivination() {
+        let getName = prompt(`Skriv inn navnet ditt:`);
+        name.innerHTML = getName;
+        cardText.innerHTML =
+          divinations[Math.floor(Math.random() * divinations.length)];
+      }
+    </script>
+  </body>
+</html>

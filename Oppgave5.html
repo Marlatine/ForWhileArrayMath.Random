@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const userPassword = prompt("Make a password");
+      const correctPassword = false;
+
+      while (correctPassword == false) {
+        const enterPassword = prompt("Skriv inn ditt hemmelige passordet:");
+        if (enterPassword === userPassword) {
+          alert("Riktig svar, hipp hurra!");
+          correctPassword = true;
+        } else {
+          alert("Ooops... feil passord");
+        }
+      }
+    </script>
+  </body>
+</html>
